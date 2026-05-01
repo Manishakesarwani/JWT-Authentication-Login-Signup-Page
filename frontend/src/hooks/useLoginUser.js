@@ -1,0 +1,45 @@
+import { useUserAuthentication } from "./useUserAuthentication";
+import { useState } from 'react'
+
+export const useLoginUser = () => {
+
+    const [error, setError] = useState("");
+    
+    const [isLogged, setIsLogged] = useState(false);
+    const {dispatch} = useUserAuthentication();
+
+    const login = async (email, password) =>{
+        setError("");
+        setIsLogged(true);
+        // console.log(email, password)
+        // console.log(`${process.env.REACT_APP_BACKEND_URL}/login`);
+
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/login`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({email: email, password: password})
+            })
+
+            const json=await response.json();
+
+            if(!response.ok){
+                setError(json.error);
+                setIsLogged(false);
+            }
+            if(response.ok){
+                setError("");
+                setIsLogged(false)
+
+                localStorage.setItem("user", JSON.stringify(json));
+
+                dispatch({type: "LOGIN", payload: json})
+            }
+
+
+    }
+
+
+  return {login, error, isLogged}
+}

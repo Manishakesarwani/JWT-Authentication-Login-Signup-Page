@@ -1,0 +1,137 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  padding: 2%;
+}
+.header, .footer{
+  width: 98%;
+  background: #6b5b95;
+  color: white;
+  padding: 15px;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.header a:link, .header a:visited{
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.header nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.header nav div a:link, .header nav div a:visited{
+  margin: 0 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all ease 0.2s;
+  font-size: 16px;
+}
+.header nav div a:hover{
+  background: #ebebeb;
+  color: #6b5b95;
+}
+.header nav div button{
+  outline: none;
+  padding: 10px 20px;
+  border: 1px solid #ebebeb;
+  background: #ebebeb;
+  border-radius: 5px;
+  margin:  0 10px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  transition: all ease 0.2s;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.header nav div button:hover{
+  background: none;
+  color: #ebebeb;
+}
+.login, .signup {
+    font-family: "Poppins", sans-serif;
+    width: 30%;
+    margin: 0 auto;
+    border: 1px solid #6b5b95;
+    padding: 2%;
+    border-radius: 10px;
+}
+.login form div input, .login form div button, .signup form div input, .signup form div button{
+  display: block;
+  width: 80%;
+  outline: none;
+  padding: 10px 15px;
+}
+.login form div input, .signup form div input{
+  border: 1px solid #6b5b95;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+.login form div button, .signup form div button{
+  width: 88%;
+  border: 1px solid #6b5b95;
+  border-radius: 5px;
+  background: #6b5b95;
+  color: #ebebeb;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all ease 0.2s;
+}
+.login form div button:hover, .signup form div button:hover{
+  background: white;
+  color: #6b5b95;
+}
+.login form div, .signup form div{
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login form div label, .signup form div label{
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.login>div:nth-child(1), .signup>div:nth-child(1){
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 0;
+  color: #6b5b95;
+  text-transform: uppercase;
+}
+.login hr, .signup hr{
+  color: #6b5b95;
+  width: 85%;
+}
+.error{
+  text-align: center;
+  color: red;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+}
+.footer{
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
